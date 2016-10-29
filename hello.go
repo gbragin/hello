@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+       "fmt"
+       "os"
+)
 
 func main() {
-     fmt.Printf("Hello, my dear world!\n")
+     s, sep := "", ""
+     for _, arg := range os.Args[1:] {
+     	 s += sep + arg
+	 sep = " "
+     }
+     fmt.Printf(s + "\n")
 }
